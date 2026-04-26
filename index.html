@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Alarm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="clock-section">
+      <div id="current-time" class="current-time">00:00:00</div>
+      <div id="current-date" class="current-date"></div>
+    </div>
+
+    <div class="alarm-set-section">
+      <h2>アラームを設定</h2>
+      <div class="input-row">
+        <input type="time" id="alarm-time" class="time-input">
+        <input type="text" id="alarm-label" class="label-input" placeholder="ラベル（任意）">
+        <button id="add-alarm" class="btn btn-primary">追加</button>
+      </div>
+    </div>
+
+    <div class="alarm-list-section">
+      <h2>アラーム一覧</h2>
+      <ul id="alarm-list" class="alarm-list">
+        <li class="empty-message">アラームがありません</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="ringing-overlay" class="ringing-overlay hidden">
+    <div class="ringing-card">
+      <div class="ringing-icon">⏰</div>
+      <div id="ringing-time" class="ringing-time"></div>
+      <div id="ringing-label" class="ringing-label"></div>
+      <button id="dismiss-btn" class="btn btn-dismiss">止める</button>
+    </div>
+  </div>
+
+  <audio id="alarm-sound" loop>
+    <source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" type="audio/ogg">
+  </audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
