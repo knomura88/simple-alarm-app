@@ -6,8 +6,8 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #0f0f1a;
-  color: #e0e0f0;
+  background: linear-gradient(135deg, #e8f4ff 0%, #f0e8ff 100%);
+  color: #1a1a3a;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -24,19 +24,23 @@ body {
 .clock-section {
   text-align: center;
   margin-bottom: 40px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px 24px 20px;
+  box-shadow: 0 4px 24px rgba(100, 100, 200, 0.12);
 }
 
 .current-time {
   font-size: 72px;
   font-weight: 200;
   letter-spacing: 4px;
-  color: #ffffff;
+  color: #4455dd;
   font-variant-numeric: tabular-nums;
 }
 
 .current-date {
   font-size: 14px;
-  color: #8888aa;
+  color: #8888bb;
   margin-top: 4px;
 }
 
@@ -44,10 +48,10 @@ body {
 .alarm-set-section h2,
 .alarm-list-section h2 {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #6666aa;
+  color: #7777cc;
   margin-bottom: 12px;
 }
 
@@ -58,59 +62,68 @@ body {
 }
 
 .time-input {
-  background: #1a1a2e;
-  border: 1px solid #333355;
-  border-radius: 8px;
-  color: #e0e0f0;
+  background: #fff;
+  border: 1.5px solid #c8c8ee;
+  border-radius: 10px;
+  color: #1a1a3a;
   font-size: 18px;
   padding: 10px 12px;
   outline: none;
   flex-shrink: 0;
-  color-scheme: dark;
+  box-shadow: 0 2px 8px rgba(100, 100, 200, 0.08);
 }
 
 .time-input:focus {
-  border-color: #5555cc;
+  border-color: #6677ee;
+  box-shadow: 0 0 0 3px rgba(100, 120, 238, 0.15);
 }
 
 .label-input {
-  background: #1a1a2e;
-  border: 1px solid #333355;
-  border-radius: 8px;
-  color: #e0e0f0;
+  background: #fff;
+  border: 1.5px solid #c8c8ee;
+  border-radius: 10px;
+  color: #1a1a3a;
   font-size: 14px;
   padding: 10px 12px;
   outline: none;
   flex: 1;
+  box-shadow: 0 2px 8px rgba(100, 100, 200, 0.08);
 }
 
 .label-input::placeholder {
-  color: #555577;
+  color: #aaaacc;
 }
 
 .label-input:focus {
-  border-color: #5555cc;
+  border-color: #6677ee;
+  box-shadow: 0 0 0 3px rgba(100, 120, 238, 0.15);
 }
 
 /* Buttons */
 .btn {
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   padding: 10px 18px;
-  transition: opacity 0.15s;
+  transition: opacity 0.15s, transform 0.1s;
   white-space: nowrap;
 }
 
 .btn:hover {
-  opacity: 0.85;
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .btn-primary {
-  background: #5555cc;
+  background: linear-gradient(135deg, #6677ee, #9966dd);
   color: #fff;
+  box-shadow: 0 3px 12px rgba(100, 100, 220, 0.35);
 }
 
 /* Alarm list */
@@ -126,29 +139,31 @@ body {
 }
 
 .empty-message {
-  color: #555577;
+  color: #aaaacc;
   font-size: 14px;
   padding: 12px 0;
   text-align: center;
 }
 
 .alarm-item {
-  background: #1a1a2e;
-  border: 1px solid #2a2a44;
-  border-radius: 12px;
+  background: #fff;
+  border: 1.5px solid #dde0ff;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   padding: 14px 16px;
   gap: 12px;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  box-shadow: 0 2px 10px rgba(100, 100, 200, 0.07);
 }
 
 .alarm-item.active {
-  border-color: #5555cc;
+  border-color: #6677ee;
+  box-shadow: 0 3px 14px rgba(100, 120, 238, 0.15);
 }
 
 .alarm-item.inactive {
-  opacity: 0.45;
+  opacity: 0.5;
 }
 
 .alarm-item-time {
@@ -156,29 +171,29 @@ body {
   font-weight: 300;
   flex: 1;
   font-variant-numeric: tabular-nums;
+  color: #2233bb;
 }
 
 .alarm-item-label {
   font-size: 12px;
-  color: #8888aa;
+  color: #9999bb;
   flex: 1;
 }
 
 .toggle-btn {
-  background: none;
-  border: 2px solid #333355;
+  background: #e0e0f4;
+  border: none;
   border-radius: 20px;
   width: 40px;
   height: 22px;
   cursor: pointer;
   position: relative;
-  transition: background 0.2s, border-color 0.2s;
+  transition: background 0.2s;
   flex-shrink: 0;
 }
 
 .toggle-btn.on {
-  background: #5555cc;
-  border-color: #5555cc;
+  background: linear-gradient(135deg, #6677ee, #9966dd);
 }
 
 .toggle-btn::after {
@@ -188,9 +203,10 @@ body {
   height: 14px;
   background: #fff;
   border-radius: 50%;
-  top: 2px;
-  left: 2px;
+  top: 4px;
+  left: 4px;
   transition: transform 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
 }
 
 .toggle-btn.on::after {
@@ -200,7 +216,7 @@ body {
 .delete-btn {
   background: none;
   border: none;
-  color: #555577;
+  color: #bbbbdd;
   cursor: pointer;
   font-size: 18px;
   padding: 2px 4px;
@@ -209,14 +225,15 @@ body {
 }
 
 .delete-btn:hover {
-  color: #cc4444;
+  color: #ee5555;
 }
 
 /* Ringing overlay */
 .ringing-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(200, 210, 255, 0.7);
+  backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -228,17 +245,18 @@ body {
 }
 
 .ringing-card {
-  background: #1a1a2e;
-  border: 1px solid #5555cc;
-  border-radius: 20px;
+  background: #fff;
+  border: 2px solid #6677ee;
+  border-radius: 24px;
   padding: 40px 48px;
   text-align: center;
+  box-shadow: 0 8px 40px rgba(100, 100, 200, 0.25);
   animation: pulse 1s ease-in-out infinite;
 }
 
 @keyframes pulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(85, 85, 204, 0.4); }
-  50% { box-shadow: 0 0 0 20px rgba(85, 85, 204, 0); }
+  0%, 100% { box-shadow: 0 8px 40px rgba(100, 100, 200, 0.25); }
+  50% { box-shadow: 0 8px 60px rgba(100, 100, 200, 0.5); }
 }
 
 .ringing-icon {
@@ -255,20 +273,22 @@ body {
 .ringing-time {
   font-size: 48px;
   font-weight: 200;
+  color: #4455dd;
   margin-bottom: 8px;
 }
 
 .ringing-label {
   font-size: 16px;
-  color: #8888aa;
+  color: #9999bb;
   margin-bottom: 28px;
   min-height: 20px;
 }
 
 .btn-dismiss {
-  background: #5555cc;
+  background: linear-gradient(135deg, #6677ee, #9966dd);
   color: #fff;
   font-size: 16px;
   padding: 12px 36px;
   border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(100, 100, 220, 0.35);
 }
